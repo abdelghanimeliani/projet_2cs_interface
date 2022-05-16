@@ -27,7 +27,7 @@ class LoginForm extends StatelessWidget {
           children: <Widget>[
             Align(
               alignment: Alignment.centerLeft,
-              child: Text('Usuário', style: TextStyle(
+              child: Text("nom d'utilisateur", style: TextStyle(
                 fontSize: widthSize * fontSizeTextField,
                 fontFamily: 'Poppins',
                 color: Colors.white)
@@ -37,7 +37,7 @@ class LoginForm extends StatelessWidget {
               controller: _usernameController,
               validator: (value) {
                 if(value!.isEmpty) {
-                  return 'Digite seu usuário para prosseguirmos!';
+                  return 'tapez votre nom svp!';
                 }
               },
               cursorColor: Colors.white,
@@ -67,7 +67,7 @@ class LoginForm extends StatelessWidget {
             SizedBox(height: heightSize * spaceBetweenFields),
             Align(
               alignment: Alignment.centerLeft,
-              child: Text('Senha', style: TextStyle(
+              child: Text('mot de passe', style: TextStyle(
                 fontSize: widthSize * fontSizeTextField,
                 fontFamily: 'Poppins',
                 color: Colors.white)
@@ -77,7 +77,7 @@ class LoginForm extends StatelessWidget {
               controller: _passwordController,
               validator: (value) {
                 if(value!.isEmpty) {
-                  return 'Digite sua senha para prosseguirmos!';
+                  return 'tapez votre mot de passe svp !';
                 }
               },
               cursorColor: Colors.white,
@@ -117,14 +117,14 @@ class LoginForm extends StatelessWidget {
                   
                 }
               },
-              child: Text('ENTRAR', style: TextStyle(
+              child: Text('ENTRER', style: TextStyle(
                 fontSize: widthSize * fontSizeButton,
                 fontFamily: 'Poppins',
                 color: Color.fromRGBO(41, 187, 255, 1))
               )
             ),
             SizedBox(height: heightSize * 0.01),
-            Text('Esqueci minha senha', style: TextStyle(
+            Text('Mot de passe oublié ?', style: TextStyle(
               fontSize: widthSize * fontSizeForgotPassword,
               fontFamily: 'Poppins',
               color: Colors.white)
