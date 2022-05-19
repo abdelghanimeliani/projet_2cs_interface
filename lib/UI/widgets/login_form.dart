@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:projet_2cs_interface/UI/home_page/home_page.dart';
 
 class LoginForm extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -114,7 +116,7 @@ class LoginForm extends StatelessWidget {
               color: Colors.white,
               onPressed: () async {
                 if(_formKey.currentState!.validate()) {
-                  
+                  Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: HomePage()));
                 }
               },
               child: Text('ENTRER', style: TextStyle(
