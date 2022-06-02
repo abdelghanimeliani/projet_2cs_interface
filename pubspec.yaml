@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   page_transition: "^2.0.5"
   hover_widget: ^0.0.1
+  url_launcher:
 
 dev_dependencies:
   flutter_test:

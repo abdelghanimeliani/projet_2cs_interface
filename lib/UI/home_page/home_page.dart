@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hover_widget/hover_widget.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:projet_2cs_interface/UI/vncviewerpage.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -24,6 +27,16 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
+                    onTap: () async {
+                      print('------------------------------------------');
+                      print('------------------------------------------');
+                      print('------------------------------------------');
+                      final Uri _url = Uri.parse('http://localhost:30165');
+                      await launchUrl(
+                          _url,
+                          mode: LaunchMode.platformDefault,
+                      );
+                    },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -55,6 +68,9 @@ class _HomePageState extends State<HomePage> {
                     width: 100,
                   ) ,
                   GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: VncViewer()));
+                    },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
