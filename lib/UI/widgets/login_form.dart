@@ -108,7 +108,7 @@ class LoginForm extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: fontSizeTextFormField)
             ),
             SizedBox(height: heightSize * spaceBetweenFieldAndButton),
-            FlatButton(
+            MaterialButton(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5)
               ),
