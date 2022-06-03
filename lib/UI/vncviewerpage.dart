@@ -27,6 +27,7 @@ class _VncViewerState extends State<VncViewer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:Color.fromRGBO(224, 245, 255, 1),
       body: Center(
         child: data == null ? CircularProgressIndicator() :
         Column(
@@ -36,16 +37,16 @@ class _VncViewerState extends State<VncViewer> {
               "connecter a l'adresse suivante depuis votre VNC viewer" ,
               style: TextStyle(
                 fontSize: 20 ,
-                color: Colors.blueAccent ,
+                color: Colors.black45 ,
                 fontFamily: 'Poppins'
               ),
             ),
-             Text(
+             SelectableText(
               "192.168.135.33:30170" ,
               style: TextStyle(
                   fontSize: 30 ,
                   fontWeight: FontWeight.bold,
-                  color: Colors.blue ,
+                  color: Colors.black87 ,
                   fontFamily: 'Poppins'
               ),
             ),
