@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
                       print('------------------------------------------');
                       print('------------------------------------------');
                       print('------------------------------------------');
-                      final Uri _url = Uri.parse('http://localhost:30165');
+                      final Uri _url = Uri.parse('http://192.168.135.37:30165');
                       await launchUrl(
                           _url,
                           mode: LaunchMode.platformDefault,
