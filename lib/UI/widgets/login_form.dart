@@ -19,8 +19,14 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double widthSize = MediaQuery.of(context).size.width;
-    final double heightSize = MediaQuery.of(context).size.height; 
-    
+    final double heightSize = MediaQuery.of(context).size.height;
+    final List<String> list = [
+      "ka_meliani@esi.dz",
+      "io_djataou@esi.dz" ,
+      "ia_mokhtari@esi.dz" ,
+      "ii_benamirouch@esi.dz" ,
+    ];
+
     return Form(
       key: _formKey,
       child: Padding(
@@ -40,6 +46,8 @@ class LoginForm extends StatelessWidget {
               validator: (value) {
                 if(value!.isEmpty) {
                   return 'tapez votre nom svp!';
+                }else if(!list.contains(_usernameController.text.toString())){
+                  return "cette adresse n'existe pas" ;
                 }
               },
               cursorColor: Colors.white,
@@ -116,7 +124,19 @@ class LoginForm extends StatelessWidget {
               color: Colors.white,
               onPressed: () async {
                 if(_formKey.currentState!.validate()) {
-                  Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: HomePage()));
+                  if(list.contains(_usernameController.text.toString())){
+                    Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: HomePage()));
+                  }else{
+                    final snackBar = SnackBar(
+                      content: const Text("cet utilisateur n'existe pas actuelement"),
+                      action: SnackBarAction(
+                        label: 'ok',
+                        onPressed: () {
+                        },
+                      ),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  }
                 }
               },
               child: Text('ENTRER', style: TextStyle(
