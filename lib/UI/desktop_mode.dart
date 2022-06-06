@@ -28,7 +28,8 @@ class _DesktopModeState extends State<DesktopMode> {
                   child: Container(
                     child: Align(
                       alignment: Alignment.center,
-                      child: Image.asset('images/login-image.png', height: heightSize * 0.5, width: widthSize * 0.5, semanticLabel: 'test'),
+                      child: Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/ESI_Logo.png/1200px-ESI_Logo.png',
+                          height: heightSize * 0.4, width: widthSize * 0.4, semanticLabel: 'test'),
                     )
                   )
                 ),
@@ -40,7 +41,8 @@ class _DesktopModeState extends State<DesktopMode> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset('images/login-form.png', height: heightSize * 0.2, width: widthSize * 0.15),
+                      Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Blue_computer_icon.svg/200px-Blue_computer_icon.svg.png',
+                          height: heightSize * 0.2, width: widthSize * 0.15),
                         SizedBox(height: 20),
                         LoginForm(
                           0, 0.009, 16, 0.04, 0.01, 0.04,
