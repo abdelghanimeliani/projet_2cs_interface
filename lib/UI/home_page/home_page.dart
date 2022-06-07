@@ -26,21 +26,18 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  GestureDetector(
-                    onTap: () async {
-                      print('------------------------------------------');
-                      print('------------------------------------------');
-                      print('------------------------------------------');
-                      final Uri _url = Uri.parse('http://192.168.135.37:30165');
-                      await launchUrl(
-                          _url,
-                          mode: LaunchMode.platformDefault,
-                      );
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ButtonFeedback(
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ButtonFeedback(
+                        child: GestureDetector(
+                          onTap: () async {
+                            final Uri _url = Uri.parse('http://192.168.135.37:30165');
+                            await launchUrl(
+                              _url,
+                              mode: LaunchMode.platformDefault,
+                            );
+                          },
                           child: Container(
                             margin: const EdgeInsets.all(15.0),
                             padding: const EdgeInsets.all(3.0),
@@ -57,24 +54,24 @@ class _HomePageState extends State<HomePage> {
 
                           ),
                         ),
-                        SizedBox(
-                          height: 20,
-                        ) ,
-                        Text("Postgresql" , style: TextStyle(fontSize: 30 , fontFamily: "Poppins" , color: Colors.black87),)
-                      ],
-                    ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ) ,
+                      Text("Postgresql" , style: TextStyle(fontSize: 30 , fontFamily: "Poppins" , color: Colors.black87),)
+                    ],
                   ),
                   SizedBox(
                     width: 100,
                   ) ,
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: VncViewer()));
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ButtonFeedback(
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ButtonFeedback(
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: VncViewer()));
+                          },
                           child: Container(
                             margin: const EdgeInsets.all(15.0),
                             padding: const EdgeInsets.all(3.0),
@@ -91,13 +88,12 @@ class _HomePageState extends State<HomePage> {
 
                           ),
                         ),
-                        SizedBox(
-                          height: 20,
-                        ) ,
-                        Text("Packet tracer" , style: TextStyle(fontSize: 30 , fontFamily: "Poppins" , color: Colors.black87),)
-                      ],
-
-                    ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ) ,
+                      Text("Packet tracer" , style: TextStyle(fontSize: 30 , fontFamily: "Poppins" , color: Colors.black87),)
+                    ],
 
                   ),
                 ],

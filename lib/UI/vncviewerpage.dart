@@ -12,7 +12,7 @@ int ? data ;
 
 class _VncViewerState extends State<VncViewer> {
   callme() async {
-    await Future.delayed(Duration(seconds: 3));
+    await Future.delayed(Duration(seconds: 2));
    setState(() {
      data = 1 ;
    });
